@@ -1,9 +1,6 @@
 language: node_js
 node_js:
 - 5.6.0
-env:
-  global:
-    secure: YNx8UFLDmhrAyDsM92S0ysz6vFW0z6JFKdd+MTazEgmzOc+lNXUxV0ESPGU+S1yjjEpbyB1VMY6HjwAQwtXAQXTUF6c2a6PCPixvltcvdqX9AM0r5uMslH7ZQ/rms+jQ8lFu0f23I9+sAoc13yFGDPJ48+Qk61jsr/qf/KoTOxV0J8sUTthyLrGgOPWGzJ0GnGJlUpm3I2ArN9ulfjvflU2iwFtQQqD17OR8hU9owbXWG12b6WOzIY7uYllJSMEA/a/AF5oPWaSyM7uBdINEnH/xL+VESlxP5SwXuUIe3iQViUyuXuXs2D4BwSX6qKe52behoUrBvxK1OXDnLNl8Xy8KKlLU7DwEQ3g+zRBnALV8xDiCIlpbo0uXgydqVmx61+pgvoL05fvdxoaRkESUvH4+WYnOYAuRXuXg7GsmbmJENGRzlsqKGSlbgwPW8uYN1ZfeS0vaqugafdemK+athHvDWUV3rktTjkg/lzntIS21Qe+6g52rBB75kFviAK39nGdi03R/Gni2AWdZzDGQ+SACm1zmrSuKlajFi5kpA+jom+ufZ3kGwFsjL4SewywycakagFOvR9QXhZqL/2kJrTmfHPPKk3v+9tBmCcIkX0jWcIxtxcnAsQsFgL/W6wrhtswZc+YrX6KQZXsRvhqIynrVy1dkYjPtZoMjaz13LL4=
 before_script:
 - npm install -g bower
 script: make

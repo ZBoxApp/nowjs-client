@@ -1,6 +1,6 @@
 {
   "name": "nowjs-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JS API that interacts with ZBox Now!",
   "main": "src/index.js",
   "scripts": {
