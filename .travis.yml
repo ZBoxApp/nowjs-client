@@ -35,9 +35,3 @@ deploy:
   on:
     tags: true
     repo: ZBoxApp/nowjs-client
-- provider: script
-  skip_cleanup: true
-  script: make deploy
-  on:
-    tags: true
-    repo: ZBoxApp/nowjs-client
