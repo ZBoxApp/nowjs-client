@@ -1,0 +1,30 @@
+{
+  "name": "nowjs-client",
+  "description": "JS API that interacts with ZBox Now!",
+  "main": "src/index.js",
+  "authors": [
+    "Elias Nahum <nahumhbl@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ZBox Now!",
+    "ZBox",
+    "Now!",
+    "API",
+    "Javascript"
+  ],
+  "homepage": "https://github.com/ZBoxApp/nowjs-client",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".travis.yml",
+    "Makefile",
+    "package.json"
+  ]
+}

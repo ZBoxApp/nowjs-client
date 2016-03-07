@@ -1,0 +1,46 @@
+language: node_js
+node_js:
+- 5.6.0
+env:
+  global:
+    secure: YNx8UFLDmhrAyDsM92S0ysz6vFW0z6JFKdd+MTazEgmzOc+lNXUxV0ESPGU+S1yjjEpbyB1VMY6HjwAQwtXAQXTUF6c2a6PCPixvltcvdqX9AM0r5uMslH7ZQ/rms+jQ8lFu0f23I9+sAoc13yFGDPJ48+Qk61jsr/qf/KoTOxV0J8sUTthyLrGgOPWGzJ0GnGJlUpm3I2ArN9ulfjvflU2iwFtQQqD17OR8hU9owbXWG12b6WOzIY7uYllJSMEA/a/AF5oPWaSyM7uBdINEnH/xL+VESlxP5SwXuUIe3iQViUyuXuXs2D4BwSX6qKe52behoUrBvxK1OXDnLNl8Xy8KKlLU7DwEQ3g+zRBnALV8xDiCIlpbo0uXgydqVmx61+pgvoL05fvdxoaRkESUvH4+WYnOYAuRXuXg7GsmbmJENGRzlsqKGSlbgwPW8uYN1ZfeS0vaqugafdemK+athHvDWUV3rktTjkg/lzntIS21Qe+6g52rBB75kFviAK39nGdi03R/Gni2AWdZzDGQ+SACm1zmrSuKlajFi5kpA+jom+ufZ3kGwFsjL4SewywycakagFOvR9QXhZqL/2kJrTmfHPPKk3v+9tBmCcIkX0jWcIxtxcnAsQsFgL/W6wrhtswZc+YrX6KQZXsRvhqIynrVy1dkYjPtZoMjaz13LL4=
+before_script:
+- npm install -g bower
+script: make
+deploy:
+- provider: s3
+  skip_cleanup: true
+  access_key_id: AKIAICGPXVUK4R5Q5YTA
+  secret_access_key:
+    secure: gHlF4Zi2+Zq7+7E6RRHvCzQPMEa0404MqM6aDS9+hDEMBVmx1L7M4LqPcGEE+CHCwaVV+3X6l4vYui5M9OMM6N7TajmO1FEj5ZwXxsRpFgy1LTTcwbLG67zLfULAmofpI9/JziQymE7heVSpOVW13HsmQIEpKHz/Wol7CTpczXvqxeu6oHBHa3VMSe8RpWUUf7PR35rh6MqK074oUVoZ+Dd90/8hHB0+ZU11NLGDSdhJ1tHedWQsdrICmn2egbVk3p2D8u3lKZq57xEBxdM9gXhn31oghRR5j6aKHGZNjWxkxD7fU3pPjuvL2RLs57wMzaknFD3VZblOgpDbBeL5JZXdcgzJttxzni6XxDbrhbDhaY2WyeijdX+AEjgw/h3XieGay+foybmnWUsk+Y9iBhQqrnTAT2vNiC1GI7FFOPrUbCrZryJFPpTP3NpvJII94PmiciaRkz9Ufi9qjWPE8nHmXhaaOymEXWs1c5uL2eGogyuHOgxWmgsGjGg5ai/mFXuB7hpmazBpWQyQnjo8/ft/TNEGg6SEZgJbV0H57wH3GlgE1CXhmVgrLhO/5BJ4r6/TdxVQ5C5Z9WlUE3jQYK2DP9iF3NY/0/YKfQhoZTT3S7IlSQCPPee1l4jhglQEWetfUICeEzIH51W3sWSjxAmPy5ELAQFvrK3PrSzHxwg=
+  bucket: zbox-now
+  region: sa-east-1
+  local-dir: dist/
+  upload-dir: nowjs-client
+  acl: public_read
+  on:
+    repo: ZBoxApp/nowjs-client
+    tags: true
+- provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: u3Xy4obMoQhbNkhP+q2G+V7l33TzT3BYsDCn9oQsm6LE4O7+E4cI351MYDoOcq1jXjWZ45yHj8qL9cNQtShtAXG8vmloeI3ODrbi0ZLq4nZvn/ecomWa+4Hb5pauEILCmdfyVt74CQFBQkz/7xty6aGxcxmAnUs0rxqIT8s+wX3tWOe7oFlazzagIlmVs50Rm2qH9n/0ETGfFXYjXrOE82Ih8pnxjGFzsygS/O+Ng5J2VfPdXcmff2Z+70qdqxfpneWudIyVtw51xDC5ws97xhtesR+BEf7cuuMvSDcEAfo3HRuqS9udJ04rlPwEcSfqIt913Aw7Z1Q9mUzPUg92nd4vX+Iwy+vvYJmdpBRBMMUk0VU233I5E6hwNLI/zBk/on3NkRV7ocwLm3V0OQPBhSjEhbKYYIpFV1zcK7MMuUZOSPoxWGocPNklDDgJRawIfe0XWpLvkbadtuva/iMFQHcPvv6U2hBxMFzwOMImzHa7scmTsbSwjTtOdPf4ZmynQA2iniNtlLIlYagzIA3g5CiJQp4JlyicJDTTmqyXCdd95nJYeD2Y6B+4oDhIZB1+wBnzDmgtCWA4RKsHv5mLx9oT8s1P2SDL+V4LAbT/62zzFRchhart6/CJeoKUKBNLDicSYoorzRV1LARmdlxSQ9JqnXDq66TLg4D4ll2y0pI=
+  file_glob: true
+  file: dist/nowjs-client*.tar.gz
+  on:
+    repo: ZBoxApp/nowjs-client
+    tags: true
+- provider: npm
+  skip_cleanup: true
+  email: nahumhbl@gmail.com
+  api_key:
+    secure: R9EDixFtvDbvjJr42KAZzlgp8UhC9uZMSCru3tFS9mb5QV+b1h9TjSP3H14dipm0zu/le2gpgOBnYIHbV8SDGXNG0++aLKAclq5Xw2ZdpXLBqo/NxFBX8Oh/ORR1LD/qM7pljuGH/0SjpmOKC4OBQgZeeT8Ye4AMdHSppkhSL2HAfZEvJi1aElE8VvV/jjuZMh2YT7eFhKfhvPUN24Qtnk685vOtoO/j4E2NmjW3lGl62mgi96TDrKuqdkVm542IPrq6sU1iqm1YnUW6+UxfkyVPf3P/wvQzniAJ4mDOmBBsQHlrA2qtliomR4I143nEQGYbR/WXL54hVbXzYLVkH3ktLJ1JVE1PNgJkP25351pv5PqfaqYG/sFX5JPv8InT6OTixKuGAm1E0bCLdNN37jNzmksknNjggllTf9YgINx7UxDFXBAnwh4O8awghIlzi4mbsexNqz/v8BF875r15MpNRBL0u7JFclBpJNmQXnNfmGBXQmNecYtLfJbzHEvBSvhRu2z5ix5oSlWUKK81/X3/SZs3zSWygGGUoByRaA7yt8harWeNCVi9eJ1QkurcxrdSVlrjQvKopfuUelBtFv1hWxtbpV4SFs3vAzSFoiX7cWEnQxPnjxQBlR38pP2kBOCXAIQJvDxG57qLyOsLD8T/yDVudmjG8jlSaj3gPSo=
+  on:
+    tags: true
+    repo: ZBoxApp/nowjs-client
+- provider: script
+  skip_cleanup: true
+  script: make deploy
+  on:
+    tags: true
+    repo: ZBoxApp/nowjs-client

@@ -1,0 +1,27 @@
+{
+  "name": "nowjs-client",
+  "version": "0.1.0",
+  "description": "JS API that interacts with ZBox Now!",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "eslint --ext .js --quiet .",
+    "start": "watchify --fast -x node -o ./dist/bundle.js -v -d ./src/*.js",
+    "build": "browserify -d ./src/*.js | exorcist ./dist/inter.js.map > ./dist/tmp.js && uglifyjs ./dist/tmp.js --in-source-map \"./dist/inter.js.map\" --source-map \"./dist/bundle.min.js.map\" --source-map-url \"./dist/bundle.min.js.map\" -c -m --screw-ie8 > ./dist/bundle.min.js && rm ./dist/tmp.js && rm ./dist/inter.js.map"
+  },
+  "keywords": [
+    "ZBox",
+    "Now!",
+    "ZBox Now!",
+    "API",
+    "Javascript"
+  ],
+  "author": "Elias Nahum <nahumhbl@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "eslint": "^2.2.0",
+    "exorcist": "^0.4.0",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.7.0"
+  }
+}
