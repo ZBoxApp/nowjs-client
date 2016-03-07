@@ -22,24 +22,24 @@ In your project just install the library with npm
 
 Download the .tar.gz from GitHub releases uncompress it and copy it somewhere in your project.
 
-`https://github.com/ZBoxApp/nowjs-client/releases/download/v0.1.0/nowjs-client-v0.1.0.tar.gz`
+`https://github.com/ZBoxApp/nowjs-client/releases/download/v0.1.0/nowjs-client-v0.1.1.tar.gz`
 
 #### Download from S3 or use it as a CDN
 
 Download the js file from Amazon S3 or reference it directly in your project from:
 
-`https://s3-sa-east-1.amazonaws.com/zbox-now/nowjs-client/nowjs-client-v0.1.0.min.js`
+`https://s3-sa-east-1.amazonaws.com/zbox-now/nowjs-client/nowjs-client-v0.1.1.min.js`
 
 Or download the .tar.gz
 
-`https://s3-sa-east-1.amazonaws.com/zbox-now/nowjs-client/nowjs-client-v0.1.0.tar.gz`
+`https://s3-sa-east-1.amazonaws.com/zbox-now/nowjs-client/nowjs-client-v0.1.1.tar.gz`
 
 ### Usage
 
 In your HTML file reference the plugin
 
 ```HTML
-    <script src="<path-to-the-js-file/nowjs-client-v0.1.0.min.js"></script>
+    <script src="<path-to-the-js-file/nowjs-client-v0.1.1.min.js"></script>
 ```
 
 
