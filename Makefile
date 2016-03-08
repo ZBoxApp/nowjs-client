@@ -17,12 +17,12 @@ endif
 
 DIST_ROOT=dist
 
-all: dist
+all: | test dist
 
 clean:
 	@rm -rf $(DIST_ROOT)
 
-dist: | build package
+dist: package
 
 test:
 	@echo ESLint...
@@ -39,8 +39,3 @@ package:
 	@echo Packaging ZBox Now! API Client
 	@tar -C $(DIST_ROOT) -czf nowjs-client-$(VERSION).tar.gz .
 	@mv nowjs-client-$(VERSION).tar.gz $(DIST_ROOT)
-
-deploy:
-	@echo Deploying to Bower
-	@bower login -t $(BOWER_TOKEN)
-	@bower register nowjs-client git@github.com:ZBoxApp/nowjs-client.git

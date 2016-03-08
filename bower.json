@@ -1,7 +1,10 @@
 {
   "name": "nowjs-client",
   "description": "JS API that interacts with ZBox Now!",
-  "main": "src/index.js",
+  "main": [
+    "dist/nowjs-client-v0.1.3.min.js",
+    "dist/nowjs-client-v0.1.3.min.js.map"
+  ],
   "authors": [
     "Elias Nahum <nahumhbl@gmail.com>"
   ],
@@ -23,8 +26,8 @@
     "bower_components",
     "test",
     "tests",
-    ".travis.yml",
     "Makefile",
-    "package.json"
+    "package.json",
+    "src"
   ]
 }
