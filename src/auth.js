@@ -44,7 +44,7 @@ proto._auth = function(teamName, callback) {
         cb = callback;
     }
 
-    request.open('POST', self.apiUri + '/oauth/client_token', true);
+    request.open('POST', self.apiUri + '/api/v1/oauth/client_token', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
     request.onload = function() {

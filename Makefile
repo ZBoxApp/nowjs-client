@@ -28,7 +28,7 @@ test:
 	@echo ESLint...
 	@npm test
 
-build:
+build: test
 	@mkdir -p $(DIST_ROOT)
 	@echo Building ZBox Now! API Client
 	@npm run build
