@@ -1,6 +1,6 @@
 {
   "name": "nowjs-client",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "JS API that interacts with ZBox Now!",
   "main": "src/index.js",
   "scripts": {
@@ -15,6 +15,13 @@
     "API",
     "Javascript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ZBoxApp/nowjs-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZBoxApp/nowjs-client/issues"
+  },
   "author": "Elias Nahum <nahumhbl@gmail.com>",
   "license": "MIT",
   "devDependencies": {
